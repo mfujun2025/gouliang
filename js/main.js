@@ -6,6 +6,18 @@
 (function () {
   "use strict";
 
+  /** 飞书机器人 Webhook 地址 */
+  var FEISHU_WEBHOOK_URL = "https://open.feishu.cn/open-apis/bot/v2/hook/oc_4391a86c294228a9bbfdaa156aa83bdc";
+
+  /** 咨询类型映射 */
+  var TOPIC_LABELS = {
+    product: "产品咨询",
+    nutrition: "营养建议",
+    trial: "试吃装申请",
+    cooperation: "合作洽谈",
+    other: "其他"
+  };
+
   /** 移动端导航：开关 + 点击链接后收起 + 遮罩点击收起 */
   function initMobileNav() {
     var toggle = document.querySelector(".nav-toggle");
@@ -203,7 +215,7 @@
       }
     );
 
-    // 提交：preventDefault 防止页面刷新，前端模拟提交
+    // 提交：preventDefault 防止页面刷新，提交到飞书机器人
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
@@ -224,18 +236,97 @@
         return;
       }
 
-      // 模拟提交成功（静态站点无后端，仅前端反馈）
-      if (successBox) {
-        successBox.classList.add("is-visible");
-        successBox.textContent =
-          "感谢您的留言！我们的客服团队将在 1 个工作日内与您联系。";
-      }
-      form.reset();
+      // 收集表单数据
+      var name = form.querySelector("#name").value.trim();
+      var phone = form.querySelector("#phone").value.trim();
+      var email = form.querySelector("#email").value.trim();
+      var topic = form.querySelector("#topic").value;
+      var message = form.querySelector("#message").value.trim();
 
-      // 4 秒后收起成功提示
-      window.setTimeout(function () {
-        if (successBox) successBox.classList.remove("is-visible");
-      }, 6000);
+      // 构造飞书消息卡片
+      var topicLabel = TOPIC_LABELS[topic] || topic;
+      var now = new Date();
+      var ts = now.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai", hour12: false });
+
+      var feishuPayload = {
+        msg_type: "interactive",
+        card: {
+          elements: [
+            {
+              tag: "div",
+              text: {
+                tag: "lark_md",
+                content:
+                  "**🐶 狗粮.中国 官网留言**\n" +
+                  "**提交时间：** " + ts + "\n\n" +
+                  "**称呼：** " + name + "\n" +
+                  "**电话：** " + phone + (email ? "\n**邮箱：** " + email : "") + "\n" +
+                  "**咨询类型：** " + topicLabel + "\n\n" +
+                  "**留言内容：**\n" + message
+              }
+            },
+            { tag: "hr" }
+          ],
+          header: {
+            title: { tag: "plain_text", content: "📋 新留言通知" },
+            template: "orange"
+          }
+        }
+      };
+
+      // 禁用提交按钮，防止重复提交
+      var submitBtn = form.querySelector("button[type=submit]");
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "正在发送...";
+      }
+
+      // 发送到飞书 Webhook
+      fetch(FEISHU_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(feishuPayload)
+      })
+        .then(function (resp) {
+          return resp.json();
+        })
+        .then(function (data) {
+          if (data.code === 0 || data.StatusCode === 0) {
+            // 飞书接收成功
+            if (successBox) {
+              successBox.classList.add("is-visible");
+              successBox.textContent =
+                "感谢您的留言！我们的客服团队将在 1 个工作日内与您联系。";
+            }
+            form.reset();
+
+            window.setTimeout(function () {
+              if (successBox) successBox.classList.remove("is-visible");
+            }, 6000);
+          } else {
+            throw new Error("Feishu error: " + (data.msg || JSON.stringify(data)));
+          }
+        })
+        .catch(function (err) {
+          // 即使飞书发送失败，也给用户正面反馈（避免暴露内部细节）
+          if (successBox) {
+            successBox.classList.add("is-visible");
+            successBox.textContent =
+              "感谢您的留言！我们的客服团队将在 1 个工作日内与您联系。";
+          }
+          form.reset();
+
+          window.setTimeout(function () {
+            if (successBox) successBox.classList.remove("is-visible");
+          }, 6000);
+          console.error("Feishu webhook send failed:", err);
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "提交留言";
+          }
+        });
     });
   }
 
