@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="宠鲜工坊 - 专注犬只营养的科学配方">
+  <defs>
+    <linearGradient id="og-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF8A4C"/>
+      <stop offset="0.55" stop-color="#E8602C"/>
+      <stop offset="1" stop-color="#C24516"/>
+    </linearGradient>
+    <radialGradient id="og-glow" cx="0.8" cy="0.2" r="0.7">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og-bg)"/>
+  <rect width="1200" height="630" fill="url(#og-glow)"/>
+  <!-- 装饰圆 -->
+  <circle cx="1020" cy="470" r="180" fill="#FFFFFF" opacity="0.08"/>
+  <circle cx="160" cy="120" r="120" fill="#FFFFFF" opacity="0.07"/>
+
+  <!-- Logo 碗 -->
+  <g transform="translate(150 200)">
+    <rect x="0" y="0" width="120" height="120" rx="28" fill="#FFF6EE"/>
+    <path d="M24 60h72a4 4 0 0 1 4 4v6a20 20 0 0 1-20 20H40a20 20 0 0 1-20-20v-6a4 4 0 0 1 4-4z" fill="#E8602C"/>
+    <circle cx="44" cy="62" r="4.5" fill="#FFF6EE"/>
+    <circle cx="60" cy="58" r="5" fill="#FFF6EE"/>
+    <circle cx="76" cy="62" r="4.5" fill="#FFF6EE"/>
+    <circle cx="68" cy="68" r="3.6" fill="#FFB084"/>
+    <circle cx="52" cy="68" r="3.6" fill="#FFB084"/>
+  </g>
+
+  <!-- 品牌名 -->
+  <text x="320" y="300" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="120" font-weight="800" fill="#FFFFFF">宠鲜工坊</text>
+  <text x="324" y="370" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="40" font-weight="600" fill="#FFE9DF">专注犬只营养的科学配方</text>
+
+  <!-- 底部标签 -->
+  <g transform="translate(324 430)">
+    <rect x="0" y="0" width="300" height="64" rx="32" fill="#FFFFFF" opacity="0.16"/>
+    <text x="24" y="42" font-family="PingFang SC, sans-serif" font-size="30" font-weight="600" fill="#FFFFFF">狗粮.中国 官方品牌站</text>
+  </g>
+</svg>

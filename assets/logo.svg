@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="宠鲜工坊 Logo">
+  <defs>
+    <linearGradient id="lg-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF8A4C"/>
+      <stop offset="1" stop-color="#E8602C"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#lg-bg)"/>
+  <!-- 狗粮碗 -->
+  <path d="M14 34h36a2 2 0 0 1 2 2v3a10 10 0 0 1-10 10H22a10 10 0 0 1-10-10v-3a2 2 0 0 1 2-2z" fill="#FFF6EE"/>
+  <path d="M14 34h36a2 2 0 0 1 2 2 12 12 0 0 1-12 12H24a12 12 0 0 1-12-12 2 2 0 0 1 2-2z" fill="#FFE9DF"/>
+  <!-- 碗内狗粮颗粒 -->
+  <circle cx="24" cy="35" r="2.4" fill="#C24516"/>
+  <circle cx="32" cy="33.5" r="2.6" fill="#C24516"/>
+  <circle cx="40" cy="35" r="2.4" fill="#C24516"/>
+  <circle cx="36" cy="37" r="2" fill="#A63812"/>
+  <circle cx="28" cy="37" r="2" fill="#A63812"/>
+  <!-- 骨头标志 -->
+  <g transform="translate(32 15) rotate(-20)">
+    <rect x="-9" y="-3" width="18" height="6" rx="3" fill="#FFF6EE"/>
+    <circle cx="-9" cy="-3" r="3.2" fill="#FFF6EE"/>
+    <circle cx="-9" cy="3" r="3.2" fill="#FFF6EE"/>
+    <circle cx="9" cy="-3" r="3.2" fill="#FFF6EE"/>
+    <circle cx="9" cy="3" r="3.2" fill="#FFF6EE"/>
+  </g>
+</svg>

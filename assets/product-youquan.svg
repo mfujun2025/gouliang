@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="优鲜奶糕 产品图">
+  <defs>
+    <linearGradient id="p1-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5D3BC"/>
+      <stop offset="1" stop-color="#EB9E66"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#p1-bg)"/>
+  <!-- 狗粮包装袋 -->
+  <g transform="translate(130 40)">
+    <!-- 袋身 -->
+    <path d="M0 20 L140 20 L150 230 L-10 230 Z" fill="#E8602C"/>
+    <path d="M0 20 L140 20 L150 230 L-10 230 Z" fill="#FFFFFF" opacity="0.06"/>
+    <!-- 袋口 -->
+    <path d="M-14 0 L154 0 L150 24 L-10 24 Z" fill="#C24516"/>
+    <!-- 标签 -->
+    <rect x="14" y="60" width="118" height="90" rx="8" fill="#FFF6EE"/>
+    <!-- 品牌 -->
+    <text x="70" y="86" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="16" font-weight="800" fill="#E8602C">宠鲜工坊</text>
+    <!-- 产品名 -->
+    <text x="70" y="112" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="13" font-weight="700" fill="#2A2520">优鲜奶糕</text>
+    <text x="70" y="130" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="8" fill="#6B6259">幼犬全期粮</text>
+    <!-- 颗粒装饰 -->
+    <circle cx="45" cy="148" r="6" fill="#C24516"/>
+    <circle cx="70" cy="152" r="7" fill="#C24516"/>
+    <circle cx="95" cy="148" r="6" fill="#C24516"/>
+  </g>
+  <!-- 散落颗粒 -->
+  <circle cx="80" cy="250" r="9" fill="#C24516"/>
+  <circle cx="110" cy="260" r="7" fill="#A63812"/>
+  <circle cx="330" cy="255" r="9" fill="#C24516"/>
+  <circle cx="300" cy="265" r="7" fill="#A63812"/>
+</svg>

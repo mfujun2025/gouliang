@@ -1,0 +1,5 @@
+# 宠鲜工坊（狗粮.中国）robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://xn--l5xw3s.xn--fiqs8s/sitemap.xml
