@@ -1,4 +1,4 @@
-# 宠鲜工坊（狗粮.中国）robots.txt
+# 狗粮.中国（狗粮.中国）robots.txt
 User-agent: *
 Allow: /
 

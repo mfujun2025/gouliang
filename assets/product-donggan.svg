@@ -12,7 +12,7 @@
     <path d="M0 20 L140 20 L150 230 L-10 230 Z" fill="#FFFFFF" opacity="0.06"/>
     <path d="M-14 0 L154 0 L150 24 L-10 24 Z" fill="#1E5B2E"/>
     <rect x="14" y="60" width="118" height="90" rx="8" fill="#FFF6EE"/>
-    <text x="70" y="86" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="16" font-weight="800" fill="#2B7A3D">宠鲜工坊</text>
+    <text x="70" y="86" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="16" font-weight="800" fill="#2B7A3D">狗粮.中国</text>
     <text x="70" y="112" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="13" font-weight="700" fill="#2A2520">冻干双拼</text>
     <text x="70" y="130" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="8" fill="#6B6259">成犬全期粮</text>
     <circle cx="45" cy="148" r="6" fill="#1E5B2E"/>

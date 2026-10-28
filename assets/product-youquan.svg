@@ -16,7 +16,7 @@
     <!-- 标签 -->
     <rect x="14" y="60" width="118" height="90" rx="8" fill="#FFF6EE"/>
     <!-- 品牌 -->
-    <text x="70" y="86" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="16" font-weight="800" fill="#E8602C">宠鲜工坊</text>
+    <text x="70" y="86" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="16" font-weight="800" fill="#E8602C">狗粮.中国</text>
     <!-- 产品名 -->
     <text x="70" y="112" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="13" font-weight="700" fill="#2A2520">优鲜奶糕</text>
     <text x="70" y="130" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="8" fill="#6B6259">幼犬全期粮</text>
