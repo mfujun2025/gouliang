@@ -7,7 +7,7 @@
   "use strict";
 
   /** 飞书机器人 Webhook 地址 */
-  var FEISHU_WEBHOOK_URL = "https://open.feishu.cn/open-apis/bot/v2/hook/oc_4391a86c294228a9bbfdaa156aa83bdc";
+  var FEISHU_WEBHOOK_URL = "https://open.feishu.cn/open-apis/bot/v2/hook/07fd2063-be49-46e0-b56c-a1daa0bab7cd";
 
   /** 咨询类型映射 */
   var TOPIC_LABELS = {
