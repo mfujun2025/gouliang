@@ -1327,11 +1327,22 @@ select:focus-visible {
 
 .news-list-card-media {
   aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #E8D3BC 0%, #C9A07E 100%);
+  /* 与封面 SVG 主色保持一致：卡片被文字撑高时 SVG 居中留白也不会露出深色横条 */
+  background: #E8D3BC;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* 列表卡片封面 SVG 必须约束尺寸，否则会按固有宽度撑破 grid 列 */
+.news-list-card-media svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .news-list-card-body {
   padding: 22px 24px;
+  min-width: 0;
 }
 
 .news-list-card-body h2 {
